@@ -19,27 +19,95 @@ To write a program to perform linear search and binary search using python progr
 ## Program:
 i)	#Use a linear search method to match the item in a list.
 ```
-
-
+'''
+Program for linear search method to match the item in a list
+Developed by: STANLEY S
+RegisterNumber: 23014354
+'''
+def linearSearch(array,n,k):
+    for i in range(len(array)):
+        if array[i]==k:
+            return i
+    return -1
+array = eval(input())
+array.sort()
+k = eval(input())
+n=len(array)
+print(array)
+result = linearSearch(array,n,k)
+if result==-1:
+    print("Element not found")
+else:
+    print("Element found at index: ",result)
 
 ```
 ii)	# Find the element in a list using Binary Search(Iterative Method).
 ```
-
-
-
-
+''' 
+Program to find the element in a list using Binary Search(Iterative Method)..
+Developed by: STANLEY S
+RegisterNumber: 23014354
+'''
+def binarySearchIter(array, k, low, high):
+    while low<=high:
+        mid=low+(high-low)//2
+        if array[mid]==k:
+            return mid
+        elif array[mid]<k:
+            low=mid+1
+        else:
+            high=mid-1
+    return -1        
+array = eval(input())
+array.sort()
+print(array)
+k = eval(input())
+result=binarySearchIter(array,k,0,len(array)-1)
+if result==-1:
+    print("Element not found")
+else:
+    print("Element found at index: ",result)
 
 ```
 iii)	# Find the element in a list using Binary Search (recursive Method).
 ```
-
-
-
-
+''' 
+Program to find the element in a list using Binary Search (recursive Method).
+Developed by: STANLEY S
+RegisterNumber: 23014354
+'''
+def BinarySearch(arr, k, low, high):
+    if low <=high:
+        mid = low+(high-low)//2
+        if arr[mid]==k:
+            return mid
+        elif arr[mid]<k:
+            return BinarySearch(arr,k,mid+1,high)
+        else:
+            return BinarySearch(arr,k,low,mid-1)
+    else:
+        return -1
+            
+    
+arr = eval(input())
+arr.sort()
+k = eval(input()) 
+print(arr)
+result = BinarySearch(arr,k,0,len(arr)-1)
+if result==-1:
+    print("Element not found")
+else:
+    print("Element found at index: ",result)
 
 ```
 ## Sample Input and Output
+Linear search
+![image](https://github.com/STANLEY-13/Search-Algorithm/assets/148198816/773d3e86-ce93-4c25-a3a6-8bcb2092b6c0)
+Binary search(iterative Method)
+![image](https://github.com/STANLEY-13/Search-Algorithm/assets/148198816/27449904-e3ee-473f-a878-0b60546d81d8)
+Binary Searc(recursive Method)
+![image](https://github.com/STANLEY-13/Search-Algorithm/assets/148198816/cd239f4f-7821-443c-b74a-66990e9d4faa)
+
 
 
 
